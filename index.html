@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIIT University Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="login-container" id="login-container">
+        <div class="login-form">
+            <div class="university-branding">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdmHfvTYE2XxIjkpAUH_Wt918nW5RVB9hD1g&s" alt="NIIT University Logo" class="logo">
+                <h2>NIIT University Rajasthan</h2>
+                <p>IoT Data Dashboard</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="dashboard-container" id="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-left">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdmHfvTYE2XxIjkpAUH_Wt918nW5RVB9hD1g&s" alt="NIIT University Logo" class="header-logo">
+                <h1>NIIT University IoT Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <span id="current-time"></span>
+                <button id="logout-btn" class="logout-btn">Logout <i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </header>
+
+        <nav class="sidebar">
+            <ul>
+                <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="dashboard-grid">
+                <!-- Temperature Graph Card -->
+                <div class="card large-card">
+                    <h2><i class="fas fa-temperature-high"></i> Temperature Data</h2>
+                    <div class="chart-container">
+                        <canvas id="temperatureChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Humidity Graph Card -->
+                <div class="card large-card">
+                    <h2><i class="fas fa-tint"></i> Humidity Data</h2>
+                    <div class="chart-container">
+                        <canvas id="humidityChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Current Temperature Card -->
+                <div class="card">
+                    <h2><i class="fas fa-thermometer-half"></i> Current Temperature</h2>
+                    <div class="metric-value" id="temperature-value">--°C</div>
+                    <div class="metric-trend">
+                        <span id="temp-trend">--</span>
+                    </div>
+                </div>
+                
+                <!-- Current Humidity Card -->
+                <div class="card">
+                    <h2><i class="fas fa-water"></i> Current Humidity</h2>
+                    <div class="metric-value" id="humidity-value">--%</div>
+                    <div class="metric-trend">
+                        <span id="humid-trend">--</span>
+                    </div>
+                </div>
+                
+                <!-- Notifications Card -->
+                <div class="card notification-card">
+                    <h2><i class="fas fa-bell"></i> Notifications</h2>
+                    <ul class="notification-list" id="notification-list">
+                        <li>System updated to v2.1</li>
+                        <li>New data available from Lab 3</li>
+                        <li>Scheduled maintenance on Friday</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
