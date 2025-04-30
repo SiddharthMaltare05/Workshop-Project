@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NIIT University Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
+    <!-- Login Page -->
     <div class="login-container" id="login-container">
         <div class="login-form">
             <div class="university-branding">
@@ -30,7 +32,7 @@
         </div>
     </div>
 
-
+    <!-- Dashboard -->
     <div class="dashboard-container" id="dashboard-container">
         <header class="dashboard-header">
             <div class="header-left">
@@ -43,58 +45,13 @@
             </div>
         </header>
 
-        <nav class="sidebar">
-            <ul>
-                <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
-                
-            </ul>
-        </nav>
-
         <main class="main-content">
             <div class="dashboard-grid">
-                <!-- Temperature Graph Card -->
-                <div class="card large-card">
-                    <h2><i class="fas fa-temperature-high"></i> Temperature Data</h2>
-                    <div class="chart-container">
-                        <canvas id="temperatureChart"></canvas>
-                    </div>
-                </div>
-                
-                <!-- Humidity Graph Card -->
-                <div class="card large-card">
-                    <h2><i class="fas fa-tint"></i> Humidity Data</h2>
-                    <div class="chart-container">
-                        <canvas id="humidityChart"></canvas>
-                    </div>
-                </div>
-                
-                <!-- Current Temperature Card -->
-                <div class="card">
-                    <h2><i class="fas fa-thermometer-half"></i> Current Temperature</h2>
-                    <div class="metric-value" id="temperature-value">--°C</div>
-                    <div class="metric-trend">
-                        <span id="temp-trend">--</span>
-                    </div>
-                </div>
-                
-                <!-- Current Humidity Card -->
-                <div class="card">
-                    <h2><i class="fas fa-water"></i> Current Humidity</h2>
-                    <div class="metric-value" id="humidity-value">--%</div>
-                    <div class="metric-trend">
-                        <span id="humid-trend">--</span>
-                    </div>
-                </div>
-                
-                <!-- Notifications Card -->
-                <div class="card notification-card">
-                    <h2><i class="fas fa-bell"></i> Notifications</h2>
-                    <ul class="notification-list" id="notification-list">
-                        <li>System updated to v2.1</li>
-                        <li>New data available from Lab 3</li>
-                        <li>Scheduled maintenance on Friday</li>
-                    </ul>
-                </div>
+                <div class="card"><h2>Temperature</h2><canvas id="temperatureChart"></canvas></div>
+                <div class="card"><h2>Humidity</h2><canvas id="humidityChart"></canvas></div>
+                <div class="card"><h2>X-Axis</h2><canvas id="xAxisChart"></canvas></div>
+                <div class="card"><h2>Y-Axis</h2><canvas id="yAxisChart"></canvas></div>
+                <div class="card"><h2>Z-Axis</h2><canvas id="zAxisChart"></canvas></div>
             </div>
         </main>
     </div>
